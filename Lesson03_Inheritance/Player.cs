@@ -15,14 +15,18 @@ namespace Lesson03_Inheritance
 		public Player(string name)
 		{
 			this.Name = name;
-			Hp = 10;
+			Hp = 10;	
 			Strength= 100	;
 		}
-		public void Attack(Player p2)
+		public virtual void Attack(Player p2)
 		{
 			Console.WriteLine("Heee-Yaaa");
 			p2.Hp -= 1;
 		}
-		
+		public override string ToString()
+		{
+			return $"{Name} (Hp={Hp}, Strength={Strength})";
+		}
+
 	}
 }
