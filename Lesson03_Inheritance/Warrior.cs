@@ -10,33 +10,22 @@ namespace Lesson03_Inheritance
 	{
 		public bool HasSword
 		{
-			get; private set;
+			get;  set;
 		}
-		public 	bool hasShield
-		{
-			get; private set;
-		}
-		public Warrior(string name) : base(name) {
-			hasShield = true;
-			HasSword = true;
-		}
-		public override void Attack(Player enemy)
-		{
-			if (HasSword)
-			{
-				Console.WriteLine("Swish-Swash!");
-				enemy.Hp -= 2;
-			}
-			else
-			{
 
-				base.Attack(enemy);
-			}
-		
-		}
-		public  override string ToString()
+		public Warrior(string name) : base(name)
 		{
-			return $"{base.ToString()} with Sword :{ HasSword} )" ;
+			HasSword = false;
+			Strength += 100;	
+		}
+
+		public override void Attack(Player p2)
+		{
+			Console.WriteLine("Yoooooo hoooo");
+			if (HasSword)
+				p2.Hp -= Strength * 2;
+			else
+				base.Attack(p2);
 		}
 
 	}

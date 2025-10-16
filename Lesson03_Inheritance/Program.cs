@@ -4,30 +4,26 @@
 	{
 		static void Main(string[] args)
 		{
-			Warrior w = new Warrior("Kai");
-
-			Wizard arnon= new Wizard("Arnon");
-			int spellPower = 3;
-			arnon.SpellPower = spellPower;
-
-			arnon.Attack(w);
-
-			Player pl = new Player("Zwilli");
-			Console.WriteLine(arnon);
-			Console.WriteLine(w);
-
+			Warrior w1 = new Warrior("Agam");
+			Console.WriteLine(w1.Name);
+			Warrior w2 = new Warrior("Liya");
+			Wizard wiz = new Wizard("yotam", 10);
 			Player[] players = new Player[3];
-			players[0] = new Wizard("Gal");
-			players[1] = new Warrior("Yarden");
-			players[2] = pl;
+			players[0] = w1;
+			players[1] = wiz;
+			players[2] = w2;
+			w2.HasSword = true;
 
 			for (int i = 0; i < players.Length; i++)
 			{
-				players[i].Attack(w);
-
-				if (players[i] is Wizard)
-					((Wizard)players[i]).CastSpell(w);
-				
+				Console.WriteLine(players[i].Name
+					+ "Hp:" + players[i].Hp);
+				if (players[i] is Warrior w){
+					//Warrior w = (Warrior)players[i];
+					//Console.WriteLine(((Warrior)players[i]).HasSword);
+					Console.WriteLine(w.HasSword);
+							}
+				players[i].Attack(w2);
 			}
 
 		}

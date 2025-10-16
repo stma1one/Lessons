@@ -8,25 +8,22 @@ namespace Lesson03_Inheritance
 {
 	internal class Player
 	{
-		public string Name { get; set; }
-		public int Hp {get; set; }
-		public int Strength { get; set; }
+		public string Name { get; init; }
+		public int Hp {get;  set; }
+		public int Strength { get; protected set; }
 
 		public Player(string name)
 		{
 			this.Name = name;
-			Hp = 10;	
+			Hp = 1000;	
 			Strength= 100	;
 		}
-		public virtual void Attack(Player p2)
+		public virtual  void Attack(Player p2)
 		{
 			Console.WriteLine("Heee-Yaaa");
-			p2.Hp -= 1;
+			p2.Hp -=Strength;
 		}
-		public override string ToString()
-		{
-			return $"{Name} (Hp={Hp}, Strength={Strength})";
-		}
+	
 
 	}
 }

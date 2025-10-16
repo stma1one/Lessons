@@ -6,36 +6,16 @@ using System.Threading.Tasks;
 
 namespace Lesson03_Inheritance
 {
-	internal class Wizard: Player
+	internal class Wizard:Player
 	{
-		private int spellPower;
-		public int SpellPower
+		public int MagicLevel{ get; private set; }
+		public Wizard(string name, int level) : base(name)
 		{
-			get { return spellPower; }
-			set {
-				if(value < 0||value>10)
-				{
-					throw new ArgumentOutOfRangeException("SpellPower must be non-negative");
-				}
-				
-				spellPower = value; }
+			MagicLevel = level;
 		}
-		public  void CastSpell(Player other)
+		public void CastSpell()
 		{
-			Console.WriteLine("Abracadabra!");
-			other.Strength -= SpellPower;
 		}
 
-		public Wizard(string name): base(name)
-		{
-			SpellPower = 1;
-		}
-
-		public override void Attack(Player enemy)
-		{
-			Console.WriteLine("Fireball!");
-			CastSpell(enemy);
-		}
-		
 	}
 }
