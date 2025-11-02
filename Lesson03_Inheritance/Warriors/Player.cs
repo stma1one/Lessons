@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lesson03_Inheritance
+namespace Lesson03_Inheritance.Warriors
 {
 	internal class Player
 	{
@@ -14,7 +14,7 @@ namespace Lesson03_Inheritance
 
 		public Player(string name)
 		{
-			this.Name = name;
+			Name = name;
 			Hp = 1000;	
 			Strength= 100	;
 		}

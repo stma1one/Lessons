@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lesson03_Inheritance
+namespace Lesson03_Inheritance.Warriors
 {
 	internal class Warrior:Player
 	{
